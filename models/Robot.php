@@ -38,7 +38,7 @@
 
             $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS integer AS $$
             BEGIN
-                    RETURN i + 1;
+                    RETURN 1;
             END;
             $$ LANGUAGE plpgsql;';
 
@@ -50,14 +50,14 @@
             // $stmt->bindParam(':robotid',$this->robotid);
             // $stmt->bindParam(':axisstatus',$this->axisstatus);
 
-            echo ($query);
+          //  echo ($query);
 
-            if($stmt->execute()){
-                return true;
-            }
+            // if($stmt->execute()){
+            //     return true;
+            // }
             
 
-            return false;
+            return $stmt;
         }
     }
 

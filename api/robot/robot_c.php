@@ -16,18 +16,20 @@
 
      $data = json_decode(file_get_contents("php://input"));
 
-     $Robot->robotid = $data->robotid;
-     $Robot->axisstatus = $data->axisstatus;
+    //  $Robot->robotid = $data->robotid;
+    //  $Robot->axisstatus = $data->axisstatus;
+    $row = $Robot->create_update();
 
-         if($Robot->create_update())
-         {
-            print_r(json_encode(
-                array('message'=> 'Robot Created')
-            ));
-         }else{
-            print_r(json_encode(
-                array('message'=> 'Robot Not Created')
-             ));
-         }
+    echo($row);
+       //  if($Robot->create_update())
+      //   {
+            // print_r(json_encode(
+            //     array('message'=> 'Robot Created')
+            // ));
+     //    }else{
+            // print_r(json_encode(
+            //     array('message'=> 'Robot Not Created')
+            //  ));
+     //    }
 
 ?>
