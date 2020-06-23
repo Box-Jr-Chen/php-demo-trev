@@ -16,24 +16,19 @@
 
      $data = json_decode(file_get_contents("php://input"));
 
-    //  $Robot->robotid = $data->robotid;
-    //  $Robot->axisstatus = $data->axisstatus;
-    $result = $Robot->create_update();
+      $Robot->robotid = $data->robotid;
+      $Robot->axisstatus = $data->axisstatus;
 
-    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
 
-        echo ($row);
-    }
-       //  if($Robot->create_update())
-      //   {
-            // print_r(json_encode(
-            //     array('message'=> 'Robot Created')
-            // ));
-     //    }else{
-            // print_r(json_encode(
-            //     array('message'=> 'Robot Not Created')
-            //  ));
-     //    }
+         if($Robot->create_update())
+         {
+             print_r(json_encode(
+                 array('message'=> 'Robot Created')
+             ));
+         }else{
+             print_r(json_encode(
+                 array('message'=> 'Robot Not Created')
+             ));
+         }
 
 ?>
