@@ -39,7 +39,7 @@
             $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar, data TEXT) RETURNS VOID AS
             $$
             BEGIN
-                    UPDATE '.$this->table.' SET axisstatus = TEXT WHERE robotid = varchar;
+                    UPDATE '.$this->table.' SET axisstatus = data WHERE robotid = key;
                     IF found THEN
                         RETURN;
                     END IF;
