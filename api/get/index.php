@@ -3,14 +3,15 @@
     header('Content-Type: application/json');
 
     include_once '../../config/Database.php';
-    include_once '../../models/User.php';
+    include_once '../../config/Database_pg.php';
+    include_once '../../models/Robot.php';
     
     $database = new Database();
     $db = $database->connect();
 
-    $User = new User($db);
+    $Robot = new Robot($db);
 
-    $result = $User->read();
+    $result = $Robot->read();
 
     $num = $result->rowCount();
 
@@ -32,7 +33,7 @@
 
             $posts_item = array(
                 'id' => $ROBOTID,
-                'axixs' => $axisArray
+                'AXISSTATUS' => $axisArray
             );
             array_push($posts_arr['data'],$posts_item);
         }

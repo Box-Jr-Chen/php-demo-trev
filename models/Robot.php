@@ -1,7 +1,7 @@
 <?php
     class User{
         private $conn;
-        private $table = 'User';
+        private $table = 'EQUIPMENT_ROBOT_AXIS';
     
     
         public $ROBOTID;
