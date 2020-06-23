@@ -13,7 +13,7 @@
      $result = $Robot->read();
 
      $num = $result->rowCount();
-    // echo('this is 3');
+     echo('this is :'.$num);
     // //Check if any users
     // //if($num > 0){
          $posts_arr = array();
