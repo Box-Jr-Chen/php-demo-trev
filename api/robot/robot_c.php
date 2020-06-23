@@ -16,6 +16,19 @@
 
      $data = json_decode(file_get_contents("php://input"));
 
+     if(!isset($data->robotid) || empty($data->robotid))
+     {
+        print_r(json_encode(
+            array('message'=> 'robotid error')
+        ));
+     }
+     if(!isset($data->axisstatus) || empty($data->axisstatus))
+     {
+        print_r(json_encode(
+            array('message'=> 'axisstatus error')
+        ));
+     }   
+
       $Robot->robotid = $data->robotid;
       $Robot->axisstatus = $data->axisstatus;
 
