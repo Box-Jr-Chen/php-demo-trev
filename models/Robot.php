@@ -4,8 +4,8 @@
         private $table = 'equipment_robot_axis';
     
     
-        public $ROBOTID;
-        public $AXISSTATUS;
+        public $robotid;
+        public $axisstatus;
     
         public function __construct($db){
                 $this->conn = $db;

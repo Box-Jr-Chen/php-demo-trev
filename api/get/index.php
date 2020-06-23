@@ -23,7 +23,7 @@
             extract($row);
 
 
-            $AXIS = json_decode($AXISSTATUS, true);
+            $AXIS = json_decode($axisstatus, true);
            
             $axisArray = array();
            foreach($AXIS as $a)
@@ -32,8 +32,8 @@
            } 
 
             $posts_item = array(
-                'id' => $ROBOTID,
-                'AXISSTATUS' => $axisArray
+                'id' => $robotid,
+                'axisstatus' => $axisArray
             );
             array_push($posts_arr['data'],$posts_item);
         }
