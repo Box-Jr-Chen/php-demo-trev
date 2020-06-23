@@ -52,8 +52,8 @@
                     END;
             END;
             $$
-            LANGUAGE plpgsql;
-            SELECT merge_db(:robotid, :axisstatus);';
+            LANGUAGE plpgsql;';
+            //SELECT merge_db(:robotid, :axisstatus);';
 
             $stmt = $this->conn->prepare($query);
 
