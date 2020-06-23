@@ -14,7 +14,7 @@
         //Get Users
         public function read(){
             //Create query
-            $query = 'SELECT * FROM '.$this->equipment_robot_axis ;
+            $query = 'SELECT * FROM '.$this->table ;
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
     
@@ -23,7 +23,7 @@
         }
         public function create(){
             //Create query
-            $query = 'INSERT INTO  '.$this->equipment_robot_axis.' (robotid,axisstatus) VALUES (:robotid,:axisstatus)' ;
+            $query = 'INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus)' ;
             $stmt = $this->conn->prepare($query);
 
             $this->robotid = htmlspecialchars( strip_tags($this->robotid));
