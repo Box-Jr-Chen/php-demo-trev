@@ -38,6 +38,6 @@
             array_push($posts_arr['data'],$posts_item);
         }
 
-        echo json_encode($posts_item);
+        echo json_encode($posts_arr);
 
 ?>
