@@ -60,8 +60,8 @@
              $this->robotid = htmlspecialchars( strip_tags($this->robotid));
              $this->axisstatus = htmlspecialchars( strip_tags($this->axisstatus));
 
-             $stmt->bindParam(':robotid',$this->robotid);
-             $stmt->bindParam(':axisstatus',$this->axisstatus);
+           //  $stmt->bindParam(':robotid',$this->robotid);
+           //  $stmt->bindParam(':axisstatus',$this->axisstatus);
 
           //  echo ($query);
 
