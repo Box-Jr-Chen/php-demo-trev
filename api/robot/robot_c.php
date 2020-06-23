@@ -19,15 +19,15 @@
      $Robot->robotid = $data->robotid;
      $Robot->axisstatus = $data->axisstatus;
 
-         if($Robot->create())
+         if($Robot->create_update())
          {
-             echo json_encode(
+            print_r(json_encode(
                 array('message'=> 'Robot Created')
-            );
+            ));
          }else{
-             echo json_encode(
+            print_r(json_encode(
                 array('message'=> 'Robot Not Created')
-             );
+             ));
          }
 
 ?>

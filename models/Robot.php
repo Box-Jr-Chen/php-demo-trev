@@ -21,9 +21,11 @@
 
             return $stmt;
         }
-        public function create(){
+        public function create_update(){
             //Create query
-            $query = 'INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus)' ;
+            $query = '
+            UPDATE '.$this->table.' SET  axisstatus = :axisstatus WHERE robotid = :robotid;
+            INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus) WHERE NOT EXISTS (SELECT 1 FROM '.$this->table.' WHERE robotid = :robotid)' ;
             $stmt = $this->conn->prepare($query);
 
             $this->robotid = htmlspecialchars( strip_tags($this->robotid));
@@ -31,8 +33,6 @@
 
             $stmt->bindParam(':robotid',$this->robotid);
             $stmt->bindParam(':axisstatus',$this->axisstatus);
-
-            echo ($query);
 
             if($stmt->execute()){
                 return true;

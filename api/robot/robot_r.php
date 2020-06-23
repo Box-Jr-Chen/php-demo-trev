@@ -15,12 +15,11 @@
      $num = $result->rowCount();
     // //Check if any users
     // //if($num > 0){
-         $posts_arr = array();
+        post$posts_arr = array();
         $posts_arr['data'] = array();
         $posts_item =null;
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
-
 
             $AXIS = json_decode($axisstatus, true);
            
