@@ -24,14 +24,17 @@
         public function create_update(){
             //Create query
           //   $query = 'UPDATE '.$this->table.' SET  axisstatus = :axisstatus WHERE robotid = :robotid;INSERT INTO  '.$this->table.' (robotid,axisstatus) SELECT :robotid,:axisstatus WHERE NOT EXISTS (SELECT 1 FROM '.$this->table.' WHERE robotid = :robotid)' ;
-             $query = 'CREATE OR REPLACE FUNCTION upsert_robotaxis(arg1 type, arg2 type) RETURNS VOID AS $$ 
+             $query = 'CREATE OR REPLACE FUNCTION upsert_robotaxis() RETURNS VOID AS 
+                        $$ 
                         DECLARE 
                         BEGIN 
                             UPDATE '.$this->table.' SET axisstatus = :axisstatus WHERE robotid = :robotid; 
                             IF NOT FOUND THEN 
                             INSERT INTO '.$this->table.' values (:robotid,:axisstatus); 
                             END IF; 
-                        END; ';
+                        END;
+                        $$ 
+                        LANGUAGE plpgsql;';
             //$query = 'INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus) ' ;
 
             $stmt = $this->conn->prepare($query);
