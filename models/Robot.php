@@ -36,9 +36,9 @@
             //             LANGUAGE plpgsql;';
 
 
-            $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS integer AS $$
+            $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS text AS $$
             BEGIN
-                    RETURN 1;
+                    RETURN "This is test";
             END;
             $$ LANGUAGE plpgsql;';
 

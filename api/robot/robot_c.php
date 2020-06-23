@@ -20,7 +20,7 @@
     //  $Robot->axisstatus = $data->axisstatus;
     $row = $Robot->create_update();
 
-    echo($row);
+    echo ($row);
        //  if($Robot->create_update())
       //   {
             // print_r(json_encode(
