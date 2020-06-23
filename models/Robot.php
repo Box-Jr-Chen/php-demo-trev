@@ -24,10 +24,10 @@
         public function create(){
             //Create query
             $query = 'INSERT INTO  '.
-            $this->equipment_robot_axis.'
-            SET 
-            robotid =:robotid,
-            axisstatus=:axisstatus
+            $this->equipment_robot_axis.' 
+            (robotid,axisstatus)
+            VALUES 
+            (:robotid,:axisstatus)
             ' ;
             $stmt = $this->conn->prepare($query);
 
