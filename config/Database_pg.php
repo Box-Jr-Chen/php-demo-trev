@@ -12,8 +12,8 @@
 
             try
             {
-                $this->conn = new PDO('pgsql:host='.$this->host.';port='.$this->port.';dbname='. $this->db_name.
-                ';user='.$this->username.';password='.$this->password,$this->username,$this->password);
+                $this->conn = new PDO('pgsql:host='.$this->host.';port='.$this->port.';dbname='. $this->db_name
+                ,$this->username,$this->password);
                 $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
                 $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
