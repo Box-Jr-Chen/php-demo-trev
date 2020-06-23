@@ -23,10 +23,9 @@
         }
         public function create_update(){
             //Create query
-            // $query = 'UPDATE '.$this->table.' SET  axisstatus = :axisstatus WHERE robotid = :robotid;
-            // INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus) WHERE NOT EXISTS (SELECT 1 FROM '.$this->table.' WHERE robotid = :robotid)' ;
+             $query = 'UPDATE '.$this->table.' SET  axisstatus = :axisstatus WHERE robotid = :robotid;INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus) WHERE NOT EXISTS (SELECT 1 FROM '.$this->table.' WHERE robotid = :robotid)' ;
 
-            $query = 'INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus) ' ;
+            //$query = 'INSERT INTO  '.$this->table.' (robotid,axisstatus) VALUES (:robotid,:axisstatus) ' ;
 
             $stmt = $this->conn->prepare($query);
 
