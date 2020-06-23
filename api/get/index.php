@@ -1,15 +1,13 @@
 <?php 
-     header('Access-Control-Allow-Origin: *');
-     header('Content-Type: application/json');
-     echo('this is 1'); exit;
+    // header('Access-Control-Allow-Origin: *');
+   //  header('Content-Type: application/json');
      include_once '../../config/Database_pg.php';
      include_once '../../models/Robot.php';
-    
-     echo('this is 2'); exit;
+
      $database = new Database();
      $db = $database->connect();
 
-    / echo('this is 2');
+     echo('this is 2');exit;
 
      $Robot = new Robot($db);
 
