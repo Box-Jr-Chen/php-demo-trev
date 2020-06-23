@@ -2,19 +2,23 @@
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
 
-    include_once '../../config/Database.php';
+    // include_once '../../config/Database.php';
     include_once '../../config/Database_pg.php';
     include_once '../../models/Robot.php';
     
+    echo('this is 1');
+
     $database = new Database();
     $db = $database->connect();
+
+    echo('this is 2');
 
     $Robot = new Robot($db);
 
     $result = $Robot->read();
 
     $num = $result->rowCount();
-
+    echo('this is 3');
     //Check if any users
     //if($num > 0){
         $posts_arr = array();
