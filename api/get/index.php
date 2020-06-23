@@ -19,7 +19,7 @@
     // echo('this is 3');
     // //Check if any users
     // //if($num > 0){
-    //     $posts_arr = array();
+         $posts_arr = array();
         $posts_arr['data'] = array();
         $posts_item =null;
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
