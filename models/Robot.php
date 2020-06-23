@@ -45,7 +45,7 @@
                     END IF;
  
                     BEGIN
-                        INSERT INTO '.$this->table.' (robotid,axisstatus) VALUES (varchar, TEXT);
+                        INSERT INTO '.$this->table.' (robotid,axisstatus) VALUES (key, data);
                         RETURN;
                     EXCEPTION WHEN unique_violation THEN
 
