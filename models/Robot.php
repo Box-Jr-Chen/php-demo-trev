@@ -23,12 +23,7 @@
         }
         public function create(){
             //Create query
-            $query = 'INSERT INTO  '.
-            $this->equipment_robot_axis.' 
-            (robotid,axisstatus)
-            VALUES 
-            (:robotid,:axisstatus)
-            ' ;
+            $query = 'INSERT INTO  '.$this->equipment_robot_axis.' (robotid,axisstatus) VALUES (:robotid,:axisstatus)' ;
             $stmt = $this->conn->prepare($query);
 
             $this->robotid = htmlspecialchars( strip_tags($this->robotid));
@@ -36,6 +31,8 @@
 
             $stmt->bindParam(':robotid',$this->robotid);
             $stmt->bindParam(':axisstatus',$this->axisstatus);
+
+            echo ($query);
 
             if($stmt->execute()){
                 return true;
