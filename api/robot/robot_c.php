@@ -20,13 +20,13 @@
      {
         print_r(json_encode(
             array('message'=> 'robotid error')
-        ));
+        ));exit;
      }
      if(!isset($data->axisstatus) || empty($data->axisstatus))
      {
         print_r(json_encode(
             array('message'=> 'axisstatus error')
-        ));
+        ));exit;
      }   
 
       $Robot->robotid = $data->robotid;
