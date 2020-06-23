@@ -6,7 +6,7 @@
     include_once '../../config/Database_pg.php';
     include_once '../../models/Robot.php';
     
-    echo('this is 1');
+    echo('this is 1');exit;
 
     $database = new Database();
     $db = $database->connect();
