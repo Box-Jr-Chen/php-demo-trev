@@ -1,7 +1,7 @@
 <?php
     class Robot{
         private $conn;
-        private $table = 'public.equipment_robot_axis';
+        private $table = 'equipment_robot_axis';
     
     
         public $ROBOTID;
@@ -14,7 +14,7 @@
         //Get Users
         public function read(){
             //Create query
-            $query = 'SELECT * FROM public.equipment_robot_axis' ;
+            $query = 'SELECT * FROM equipment_robot_axis' ;
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
     
