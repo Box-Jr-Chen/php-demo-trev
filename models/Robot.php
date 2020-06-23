@@ -38,7 +38,7 @@
 
             $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS VOID AS $$
             BEGIN
-                    INSERT INTO '.$this->table.' values (:robotid,:axisstatus); 
+                    INSERT INTO equipment_robot_axis values (:robotid,:axisstatus); 
             END;
             $$ LANGUAGE plpgsql;';
 
