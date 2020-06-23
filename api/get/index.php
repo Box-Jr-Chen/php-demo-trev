@@ -1,7 +1,7 @@
 <?php 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
-
+    echo('this is bbb');exit;
     // include_once '../../config/Database.php';
     include_once '../../config/Database_pg.php';
     include_once '../../models/Robot.php';
