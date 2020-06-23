@@ -36,12 +36,24 @@
             //             LANGUAGE plpgsql;';
 
 
-            $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS BOOLEAN  AS $$
+            $query = 'CREATE FUNCTION merge_db(key varchar, data TEXT) RETURNS VOID AS
+            $$
             BEGIN
-                    INSERT INTO equipment_robot_axis values (:robotid,:axisstatus); 
-                    RETURN false;
+                    UPDATE '.$this->table.' SET axisstatus = TEXT WHERE robotid = varchar;
+                    IF found THEN
+                        RETURN;
+                    END IF;
+ 
+                    BEGIN
+                        INSERT INTO '.$this->table.' (robotid,axisstatus) VALUES (varchar, TEXT);
+                        RETURN;
+                    EXCEPTION WHEN unique_violation THEN
+
+                    END;
             END;
-            $$ LANGUAGE plpgsql;';
+            $$
+            LANGUAGE plpgsql;
+            SELECT merge_db(:robotid, :axisstatus);';
 
             $stmt = $this->conn->prepare($query);
 
