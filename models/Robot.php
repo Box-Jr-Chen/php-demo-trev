@@ -1,5 +1,5 @@
 <?php
-    class User{
+    class Robot{
         private $conn;
         private $table = 'EQUIPMENT_ROBOT_AXIS';
     
