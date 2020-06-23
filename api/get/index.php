@@ -7,7 +7,6 @@
      $database = new Database();
      $db = $database->connect();
 
-     echo('this is 2');exit;
 
      $Robot = new Robot($db);
 
