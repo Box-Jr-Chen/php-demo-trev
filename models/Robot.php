@@ -57,16 +57,27 @@
 
             $stmt = $this->conn->prepare($query);
 
-             $this->robotid = htmlspecialchars( strip_tags($this->robotid));
-             $this->axisstatus = htmlspecialchars( strip_tags($this->axisstatus));
-
-           //  $stmt->bindParam(':robotid',$this->robotid);
-           //  $stmt->bindParam(':axisstatus',$this->axisstatus);
 
           //  echo ($query);
 
              if($stmt->execute()){
-                 return true;
+
+                $query2 = 'SELECT merge_db(:robotid, :axisstatus);';
+                $stmt2 = $this->conn->prepare($query2);
+
+                $this->robotid = htmlspecialchars( strip_tags($this->robotid));
+                $this->axisstatus = htmlspecialchars( strip_tags($this->axisstatus));
+   
+               $stmt2->bindParam(':robotid',$this->robotid);
+               $stmt2->bindParam(':axisstatus',$this->axisstatus);
+
+                if( $stmt2->execute())
+                {
+                    return true;
+                }
+
+
+                 return false;
              }
             
 
