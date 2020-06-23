@@ -37,6 +37,6 @@
             array_push($posts_arr['data'],$posts_item);
         }
 
-        print_r(json_encode($posts_arr));
+        echo json_encode($posts_arr);
 
 ?>

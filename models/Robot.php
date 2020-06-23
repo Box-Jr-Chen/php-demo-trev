@@ -21,6 +21,15 @@
 
             return $stmt;
         }
+        public function create(){
+            //Create query
+            $query = 'SELECT * FROM equipment_robot_axis' ;
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+    
+
+            return $stmt;
+        }
     }
 
 ?>
