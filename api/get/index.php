@@ -22,6 +22,8 @@
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
 
+            echo($AXISSTATUS);exit;
+
             $AXIS = json_decode($AXISSTATUS, true);
            
             $axisArray = array();
