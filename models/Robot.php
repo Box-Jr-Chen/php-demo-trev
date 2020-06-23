@@ -36,7 +36,7 @@
             //             LANGUAGE plpgsql;';
 
 
-            $query = 'CREATE FUNCTION merge_db(key varchar, data TEXT) RETURNS VOID AS
+            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar, data TEXT) RETURNS VOID AS
             $$
             BEGIN
                     UPDATE '.$this->table.' SET axisstatus = TEXT WHERE robotid = varchar;
