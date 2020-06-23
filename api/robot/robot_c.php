@@ -1,6 +1,10 @@
 <?php 
-    // header('Access-Control-Allow-Origin: *');
-   //  header('Content-Type: application/json');
+     header('Access-Control-Allow-Origin: *');
+     header('Content-Type: application/json');
+     header('Access-Control-Allow-Methods: POST');
+     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
+     Access-Control-Allow-Methods,Authorization,X-Requested-With');
+
      include_once '../../config/Database_pg.php';
      include_once '../../models/Robot.php';
 
@@ -10,33 +14,20 @@
 
      $Robot = new Robot($db);
 
-     $result = $Robot->read();
+     $data = json_decode(file_get_contents("php://input"));
 
-     $num = $result->rowCount();
-    // //Check if any users
-    // //if($num > 0){
-         $posts_arr = array();
-        $posts_arr['data'] = array();
-        $posts_item =null;
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
+     $Robot->robotid = $data->robotid;
+     $Robot->axisstatus = $data->axisstatus;
 
-
-            $AXIS = json_decode($axisstatus, true);
-           
-            $axisArray = array();
-           foreach($AXIS as $a)
-           {
-                array_push($axisArray,$a);
-           } 
-
-            $posts_item = array(
-                'id' => $robotid,
-                'axisstatus' => $axisArray
+         if($Robot->create())
+         {
+             echo json_encode(
+                array('message'=> 'Robot Created')
             );
-            array_push($posts_arr['data'],$posts_item);
-        }
-
-        echo json_encode($posts_arr);
+         }else{
+             echo json_encode(
+                array('message'=> 'Robot Not Created')
+             );
+         }
 
 ?>

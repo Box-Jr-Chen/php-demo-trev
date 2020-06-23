@@ -1,6 +1,6 @@
 <?php 
-    // header('Access-Control-Allow-Origin: *');
-   //  header('Content-Type: application/json');
+     header('Access-Control-Allow-Origin: *');
+     header('Content-Type: application/json');
      include_once '../../config/Database_pg.php';
      include_once '../../models/Robot.php';
 
