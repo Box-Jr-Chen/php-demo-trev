@@ -18,9 +18,13 @@
 
     //  $Robot->robotid = $data->robotid;
     //  $Robot->axisstatus = $data->axisstatus;
-    $row = $Robot->create_update();
+    $result = $Robot->create_update();
 
-    echo ($row);
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        extract($row);
+
+        echo ($row);
+    }
        //  if($Robot->create_update())
       //   {
             // print_r(json_encode(
