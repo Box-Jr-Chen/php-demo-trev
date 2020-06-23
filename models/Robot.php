@@ -14,7 +14,7 @@
         //Get Users
         public function read(){
             //Create query
-            $query = 'SELECT * FROM dbo.EQUIPMENT_ROBOT_AXIS' ;
+            $query = 'SELECT * FROM EQUIPMENT_ROBOT_AXIS' ;
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
     
