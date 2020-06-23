@@ -36,9 +36,10 @@
             //             LANGUAGE plpgsql;';
 
 
-            $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS VOID AS $$
+            $query = 'CREATE OR REPLACE FUNCTION increment(i integer) RETURNS BOOLEAN  AS $$
             BEGIN
                     INSERT INTO equipment_robot_axis values (:robotid,:axisstatus); 
+                    RETURN false;
             END;
             $$ LANGUAGE plpgsql;';
 
