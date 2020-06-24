@@ -28,13 +28,13 @@
             $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar, posx float,posy float,ro float) RETURNS VOID AS
             $$
             BEGIN
-                    UPDATE '.$this->table.' SET pos_x =posx,pos_y=posy,rotation=ro WHERE robotid = key;
+                    UPDATE '.$this->table.' SET pos_x =posx,pos_y=posy,rotation=ro WHERE equipid = key;
                     IF found THEN
                         RETURN;
                     END IF;
  
                     BEGIN
-                        INSERT INTO '.$this->table.' (robotid,pos_x,pos_y,rotation) VALUES (key, posx,posy,ro);
+                        INSERT INTO '.$this->table.' (equipid,pos_x,pos_y,rotation) VALUES (key, posx,posy,ro);
                         RETURN;
                     EXCEPTION WHEN unique_violation THEN
 
