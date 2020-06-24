@@ -4,7 +4,7 @@
         private $table = 'equipment_pos';
     
     
-        public $robotid;
+        public $equipid;
         public $pos_x;
         public $pos_y;
         public $rotation;

@@ -21,7 +21,7 @@
             extract($row);
 
             $posts_item = array(
-                'id' => $robotid,
+                'id' => $equipid,
                 'pos_x' => $pos_x,
                 'pos_y' => $pos_y,
                 'rotation' => $rotation,
