@@ -22,19 +22,19 @@
             array('message'=> 'robotid error')
         ));exit;
      }
-     if(!isset($data->pos_x) || empty($data->pos_x))
+     if(!isset($data->pos_x) )
      {
         print_r(json_encode(
             array('message'=> 'pos_x error')
         ));exit;
      }   
-     if(!isset($data->pos_y) || empty($data->pos_y))
+     if(!isset($data->pos_y) )
      {
         print_r(json_encode(
             array('message'=> 'pos_y error')
         ));exit;
      }   
-     if(!isset($data->rotation) || empty($data->rotation))
+     if(!isset($data->rotation) )
      {
         print_r(json_encode(
             array('message'=> 'rotation error')
