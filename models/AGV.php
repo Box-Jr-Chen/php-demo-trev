@@ -25,10 +25,10 @@
         }
         public function create_update(){
 
-            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar, posx float, posy float, ro float) RETURNS VOID AS
+            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar, posx float,posy float,ro float) RETURNS VOID AS
             $$
             BEGIN
-                    UPDATE '.$this->table.' SET pos_x = posx,pos_y = posy,rotation = ro WHERE robotid = key;
+                    UPDATE '.$this->table.' SET pos_x =posx,pos_y=posy,rotation=ro WHERE robotid = key;
                     IF found THEN
                         RETURN;
                     END IF;
