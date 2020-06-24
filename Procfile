@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 api/robot/
+web: vendor/bin/heroku-php-apache2 api/equipment/
