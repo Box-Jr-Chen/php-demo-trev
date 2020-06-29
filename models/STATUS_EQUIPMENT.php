@@ -84,17 +84,21 @@
                $stmt2->bindParam(':mission',$this->mission);
                $stmt2->bindParam(':palletsize',$this->palletsize);
 
-                echo ($this->equipid);
-                echo ($this->brand);
-                echo ($this->devip);
-                echo ($this->subid);
-                echo ($this->opid);
-                echo ($this->status);
-                echo ($this->mode);
-                echo ($this->linkstatus);
-                echo ($this->palletno);
-                echo ($this->mission);
-                echo ($this->palletsize);
+
+               print_r(json_encode(
+                array(
+                    'equipid'=> $this->equipid,
+                    'brand'=> $this->brand,
+                    'devip'=> $this->devip,
+                    'opid'=> $this->opid,
+                    'status'=> $this->status,
+                    'mode'=> $this->mode,
+                    'linkstatus'=> $this->linkstatus,
+                    'palletno'=> $this->palletno,
+                    'mission'=> $this->mission,
+                    'palletsize'=> $this->palletsize
+                )
+
             //     if( $stmt2->execute())
             //     {
             //         return true;
