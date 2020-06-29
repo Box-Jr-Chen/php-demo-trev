@@ -48,19 +48,19 @@
             array('message'=> 'opid error')
         ));exit;
      }
-     if(!isset($data->status) || empty($data->status))
+     if(!isset($data->status))
      {
         print_r(json_encode(
             array('message'=> 'status error')
         ));exit;
      }  
-     if(!isset($data->mode) || empty($data->mode))
+     if(!isset($data->mode))
      {
         print_r(json_encode(
             array('message'=> 'mode error')
         ));exit;
      }
-     if(!isset($data->linkstatus) || empty($data->linkstatus))
+     if(!isset($data->linkstatus))
      {
         print_r(json_encode(
             array('message'=> 'linkstatus error')
