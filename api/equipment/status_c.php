@@ -98,19 +98,16 @@
       $Robot->mission = $data->mission;
       $Robot->palletsize = $data->palletsize;
 
-      print_r(json_encode(
-        array('message'=> $Robot->equipid)
-    ));
 
-        //  if($Robot->create_update())
-        //  {
-        //      print_r(json_encode(
-        //          array('message'=> 'Status Created')
-        //      ));
-        //  }else{
-        //      print_r(json_encode(
-        //          array('message'=> 'Status Not Created')
-        //      ));
-        //  }
+         if($Robot->create_update())
+         {
+             print_r(json_encode(
+                 array('message'=> 'Status Created')
+             ));
+         }else{
+             print_r(json_encode(
+                 array('message'=> 'Status Not Created')
+             ));
+         }
 
 ?>
