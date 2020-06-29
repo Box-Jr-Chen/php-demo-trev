@@ -99,7 +99,7 @@
       $Robot->palletsize = $data->palletsize;
 
 
-         if($Robot->create_update())
+         if($status->create_update())
          {
              print_r(json_encode(
                  array('message'=> 'Status Created')
