@@ -83,14 +83,26 @@
                $stmt2->bindParam(':palletno',$this->palletno);
                $stmt2->bindParam(':mission',$this->mission);
                $stmt2->bindParam(':palletsize',$this->palletsize);
-                if( $stmt2->execute())
-                {
-                    return true;
-                }
+
+                echo ($this->equipid);
+                echo ($this->brand);
+                echo ($this->devip);
+                echo ($this->subid);
+                echo ($this->opid);
+                echo ($this->status);
+                echo ($this->mode);
+                echo ($this->linkstatus);
+                echo ($this->palletno);
+                echo ($this->mission);
+                echo ($this->palletsize);
+            //     if( $stmt2->execute())
+            //     {
+            //         return true;
+            //     }
 
 
-                 return false;
-             }
+            //      return false;
+            //  }
             
 
              return false;
