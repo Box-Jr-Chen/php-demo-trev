@@ -84,10 +84,26 @@
                $stmt2->bindParam(':mission',$this->mission);
                $stmt2->bindParam(':palletsize',$this->palletsize);
 
-                if( $stmt2->execute())
-                {
-                    return true;
-                }
+
+            print_r(json_encode(
+                array(
+                    'equipid'=> $this->equipid,
+                    'brand'=> $this->brand,
+                    'devip'=> $this->devip,
+                    'opid'=> $this->opid,
+                    'status'=> $this->status,
+                    'mode'=> $this->mode,
+                    'linkstatus'=> $this->linkstatus,
+                    'palletno'=> $this->palletno,
+                    'mission'=> $this->mission,
+                    'palletsize'=> $this->palletsize
+                )));
+
+
+                // if( $stmt2->execute())
+                // {
+                //     return true;
+                // }
 
                   return false;
               }
