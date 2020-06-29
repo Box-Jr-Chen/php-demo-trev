@@ -30,19 +30,19 @@
             array('message'=> 'brand error')
         ));exit;
      }   
-     if(!isset($data->devip) || empty($data->devip))
+     if(!isset($data->devip))
      {
         print_r(json_encode(
             array('message'=> 'devip error')
         ));exit;
      }
-     if(!isset($data->subid) || empty($data->subid))
+     if(!isset($data->subid))
      {
         print_r(json_encode(
             array('message'=> 'subid error')
         ));exit;
      }  
-     if(!isset($data->opid) || empty($data->opid))
+     if(!isset($data->opid))
      {
         print_r(json_encode(
             array('message'=> 'opid error')
@@ -66,19 +66,19 @@
             array('message'=> 'linkstatus error')
         ));exit;
      }  
-     if(!isset($data->palletno) || empty($data->palletno))
+     if(!isset($data->palletno))
      {
         print_r(json_encode(
             array('message'=> 'palletno error')
         ));exit;
      }
-     if(!isset($data->mission) || empty($data->mission))
+     if(!isset($data->mission))
      {
         print_r(json_encode(
             array('message'=> 'mission error')
         ));exit;
      }  
-     if(!isset($data->palletsize) || empty($data->palletsize))
+     if(!isset($data->palletsize))
      {
         print_r(json_encode(
             array('message'=> 'palletsize error')
