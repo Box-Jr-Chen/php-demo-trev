@@ -97,7 +97,7 @@
                     'palletno'=> $this->palletno,
                     'mission'=> $this->mission,
                     'palletsize'=> $this->palletsize
-                )
+                )));
 
             //     if( $stmt2->execute())
             //     {
