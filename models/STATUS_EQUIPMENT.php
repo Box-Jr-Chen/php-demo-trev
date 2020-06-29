@@ -32,7 +32,7 @@
         }
         public function create_update(){
 
-            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c integer,mode_c integer,linkstatus_c integer,palletno_c varchar,mission_c Text,palletsize_c varchar) RETURNS VOID AS
+            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c smallint,mode_c smallint,linkstatus_c smallint,palletno_c varchar,mission_c Text,palletsize_c varchar) RETURNS VOID AS
             $$
             BEGIN
                     UPDATE '.$this->table.' SET brand =brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,mission=mission_c,palletsize=palletsize_c  WHERE equipid = key;
@@ -58,7 +58,7 @@
 
              if($stmt->execute()){
 
-                $query2 = 'SELECT merge_db(:equipid,:brand,:devip,:subid,:opid,:status,:mode,:linkstatus,:palletno,:mission,:palletsize);';
+                $query2 = 'SELECT merge_db(:equipid,:brand,:devip,:subid,:opid,:status_c,:mode,:linkstatus,:palletno,:mission,:palletsize);';
                 $stmt2 = $this->conn->prepare($query2);
 
                 $this->equipid = htmlspecialchars( strip_tags($this->equipid));
@@ -77,7 +77,7 @@
                $stmt2->bindParam(':devip',$this->devip);
                $stmt2->bindParam(':subid',$this->subid);
                $stmt2->bindParam(':opid',$this->opid);
-               $stmt2->bindParam(':status',$this->status);
+               $stmt2->bindParam(':status_c',$this->status);
                $stmt2->bindParam(':mode',$this->mode);
                $stmt2->bindParam(':linkstatus',$this->linkstatus);
                $stmt2->bindParam(':palletno',$this->palletno);
