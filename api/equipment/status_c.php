@@ -86,17 +86,32 @@
      }
  
 
-      $Robot->equipid = $data->equipid;
-      $Robot->brand = $data->brand;
-      $Robot->devip = $data->devip;
-      $Robot->subid = $data->subid;
-      $Robot->opid = $data->opid;
-      $Robot->status = $data->status;
-      $Robot->mode = $data->mode;
-      $Robot->linkstatus = $data->linkstatus;
-      $Robot->palletno = $data->palletno;
-      $Robot->mission = $data->mission;
-      $Robot->palletsize = $data->palletsize;
+      $status->equipid = $data->equipid;
+      $status->brand = $data->brand;
+      $status->devip = $data->devip;
+      $status->subid = $data->subid;
+      $status->opid = $data->opid;
+      $status->status = $data->status;
+      $status->mode = $data->mode;
+      $status->linkstatus = $data->linkstatus;
+      $status->palletno = $data->palletno;
+      $status->mission = $data->mission;
+      $status->palletsize = $data->palletsize;
+
+
+    //   print_r(json_encode(
+    //     array(
+    //         'equipid'=> $this->equipid,
+    //         'brand'=> $this->brand,
+    //         'devip'=> $this->devip,
+    //         'opid'=> $this->opid,
+    //         'status'=> $this->status,
+    //         'mode'=> $this->mode,
+    //         'linkstatus'=> $this->linkstatus,
+    //         'palletno'=> $this->palletno,
+    //         'mission'=> $this->mission,
+    //         'palletsize'=> $this->palletsize
+    //     )));
 
 
          if($status->create_update())
