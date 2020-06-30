@@ -72,6 +72,9 @@
                 $this->palletno = htmlspecialchars( strip_tags($this->palletno));
                 $this->mission = htmlspecialchars( strip_tags($this->mission));
                 $this->palletsize = htmlspecialchars( strip_tags($this->palletsize));
+
+                $this->status = 22;
+
                $stmt2->bindParam(':equipid',$this->equipid);
                $stmt2->bindParam(':brand',$this->brand);
                $stmt2->bindParam(':devip',$this->devip);
