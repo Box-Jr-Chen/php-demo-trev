@@ -32,7 +32,7 @@
         }
         public function create_update(){
 
-            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c integer,mode_c integer,linkstatus_c integer,palletno_c varchar,mission_c varchar,palletsize_c varchar) RETURNS VOID AS
+            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c smallint,mode_c smallint,linkstatus_c smallint,palletno_c varchar,mission_c varchar,palletsize_c varchar) RETURNS VOID AS
             $$
             BEGIN
                     UPDATE '.$this->table.' SET brand =brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,mission=mission_c,palletsize=palletsize_c  WHERE equipid = key;
@@ -87,16 +87,16 @@
 
             print_r(json_encode(
                 array(
-                    'equipid'=> $this->equipid,
-                    'brand'=> $this->brand,
-                    'devip'=> $this->devip,
-                    'opid'=> $this->opid,
-                    'status'=> $this->status,
-                    'mode'=> $this->mode,
-                    'linkstatus'=> $this->linkstatus,
-                    'palletno'=> $this->palletno,
-                    'mission'=> $this->mission,
-                    'palletsize'=> $this->palletsize
+                    'equipid'=> gettype($this->equipid),
+                    'brand'=> gettype($this->brand),
+                    'devip'=> gettype($this->devip),
+                    'opid'=> gettype($this->opid),
+                    'status'=> gettype($this->status),
+                    'mode'=> gettype($this->mode),
+                    'linkstatus'=> gettype($this->linkstatus),
+                    'palletno'=> gettype($this->palletno),
+                    'mission'=> gettype($this->mission),
+                    'palletsize'=> gettype($this->palletsize)
                 )));
 
 
