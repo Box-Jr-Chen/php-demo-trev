@@ -73,40 +73,39 @@
                 $this->mission = htmlspecialchars( strip_tags($this->mission));
                 $this->palletsize = htmlspecialchars( strip_tags($this->palletsize));
 
-                $this->status = 22;
 
                $stmt2->bindParam(':equipid',$this->equipid);
                $stmt2->bindParam(':brand',$this->brand);
                $stmt2->bindParam(':devip',$this->devip);
                $stmt2->bindParam(':subid',$this->subid);
                $stmt2->bindParam(':opid',$this->opid);
-               $stmt2->bindParam(':status_c',$this->status);
-               $stmt2->bindParam(':mode',$this->mode);
-               $stmt2->bindParam(':linkstatus',$this->linkstatus);
+               $stmt2->bindParam(':status_c',(int)($this->status));
+               $stmt2->bindParam(':mode',(int)($this->mode));
+               $stmt2->bindParam(':linkstatus',(int)($this->linkstatus));
                $stmt2->bindParam(':palletno',$this->palletno);
                $stmt2->bindParam(':mission',$this->mission);
                $stmt2->bindParam(':palletsize',$this->palletsize);
 
 
-            print_r(json_encode(
-                array(
-                    'equipid'=> gettype($this->equipid),
-                    'brand'=> gettype($this->brand),
-                    'devip'=> gettype($this->devip),
-                    'opid'=> gettype($this->opid),
-                    'status'=> gettype($this->status),
-                    'mode'=> gettype($this->mode),
-                    'linkstatus'=> gettype($this->linkstatus),
-                    'palletno'=> gettype($this->palletno),
-                    'mission'=> gettype($this->mission),
-                    'palletsize'=> gettype($this->palletsize)
-                )));
+            // print_r(json_encode(
+            //     array(
+            //         'equipid'=> gettype($this->equipid),
+            //         'brand'=> gettype($this->brand),
+            //         'devip'=> gettype($this->devip),
+            //         'opid'=> gettype($this->opid),
+            //         'status'=> gettype($this->status),
+            //         'mode'=> gettype($this->mode),
+            //         'linkstatus'=> gettype($this->linkstatus),
+            //         'palletno'=> gettype($this->palletno),
+            //         'mission'=> gettype($this->mission),
+            //         'palletsize'=> gettype($this->palletsize)
+            //     )));
 
 
-                // if( $stmt2->execute())
-                // {
-                //     return true;
-                // }
+                if( $stmt2->execute())
+                {
+                    return true;
+                }
 
                   return false;
               }
