@@ -87,7 +87,7 @@
                $stmt2->bindParam(':linkstatus',$this->linkstatus);
                $stmt2->bindParam(':palletno',$this->palletno);
                $stmt2->bindParam(':mission',$this->mission);
-               $stmt2->bindParam(':palletsize',$this->palletsize);
+               $stmt2->bindParam(':palletsize',$this->mission);
 
 
             // print_r(json_encode(
