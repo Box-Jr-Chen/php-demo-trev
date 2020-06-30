@@ -66,9 +66,9 @@
                 $this->devip = htmlspecialchars( strip_tags($this->devip));
                 $this->subid = htmlspecialchars( strip_tags($this->subid));
                 $this->opid = htmlspecialchars( strip_tags($this->opid));
-                $this->status = htmlspecialchars( strip_tags($this->status));
-                $this->mode = htmlspecialchars( strip_tags($this->mode));
-                $this->linkstatus = htmlspecialchars( strip_tags($this->linkstatus));
+                $this->status = (int)htmlspecialchars( strip_tags($this->status));
+                $this->mode = (int)htmlspecialchars( strip_tags($this->mode));
+                $this->linkstatus = (int)htmlspecialchars( strip_tags($this->linkstatus));
                 $this->palletno = htmlspecialchars( strip_tags($this->palletno));
                 $this->mission = htmlspecialchars( strip_tags($this->mission));
                 $this->palletsize = htmlspecialchars( strip_tags($this->palletsize));
