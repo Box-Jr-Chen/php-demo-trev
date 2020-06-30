@@ -39,13 +39,13 @@
                     $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c varchar,mode_c varchar,linkstatus_c varchar,palletno_c varchar,mission_c varchar) RETURNS VOID AS
             $$
             BEGIN
-                    UPDATE '.$this->table.' SET brand=brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,mission=mission_c  WHERE equipid = key;
+                    UPDATE '.$this->table.' SET brand=brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,palletsize=mission_c  WHERE equipid = key;
                     IF found THEN
                         RETURN;
                     END IF;
  
                     BEGIN
-                        INSERT INTO '.$this->table.' (equipid,brand,devip,subid,opid,status,mode,linkstatus,palletno,mission) VALUES (key, brand_c,devip_c,subid_c,opid_c,status_c,mode_c,linkstatus_c,palletno_c,mission_c);
+                        INSERT INTO '.$this->table.' (equipid,brand,devip,subid,opid,status,mode,linkstatus,palletno,mission,palletsize) VALUES (key, brand_c,devip_c,subid_c,opid_c,status_c,mode_c,linkstatus_c,palletno_c,mission_c,mission_c);
                         RETURN;
                     EXCEPTION WHEN unique_violation THEN
 
