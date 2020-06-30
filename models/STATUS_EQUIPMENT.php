@@ -57,7 +57,6 @@
           //  echo ($query);
 
              if($stmt->execute()){
-
                 $query2 = 'SELECT merge_db(:equipid,:brand,:devip,:subid,:opid,:status_c,:mode,:linkstatus,:palletno,:mission,:palletsize);';
                 $stmt2 = $this->conn->prepare($query2);
 
@@ -90,25 +89,16 @@
                $stmt2->bindParam(':palletsize',$this->palletsize);
 
 
-            // print_r(json_encode(
-            //     array(
-            //         'equipid'=> gettype($this->equipid),
-            //         'brand'=> gettype($this->brand),
-            //         'devip'=> gettype($this->devip),
-            //         'opid'=> gettype($this->opid),
-            //         'status'=> gettype($this->status),
-            //         'mode'=> gettype($this->mode),
-            //         'linkstatus'=> gettype($this->linkstatus),
-            //         'palletno'=> gettype($this->palletno),
-            //         'mission'=> gettype($this->mission),
-            //         'palletsize'=> gettype($this->palletsize)
-            //     )));
+            print_r(json_encode(
+                array(
+                    'q'=> $query2,
+                )));
 
 
-                if( $stmt2->execute())
-                {
-                    return true;
-                }
+                // if( $stmt2->execute())
+                // {
+                //     return true;
+                // }
 
                   return false;
               }
