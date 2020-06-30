@@ -32,7 +32,7 @@
         }
         public function create_update(){
 
-            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c smallint,mode_c smallint,linkstatus_c smallint,palletno_c varchar,mission_c varchar,palletsize_c varchar) RETURNS VOID AS
+            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c varchar,mode_c varchar,linkstatus_c varchar,palletno_c varchar,mission_c varchar,palletsize_c varchar) RETURNS VOID AS
             $$
             BEGIN
                     UPDATE '.$this->table.' SET brand =brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,mission=mission_c,palletsize=palletsize_c  WHERE equipid = key;
@@ -72,9 +72,6 @@
                 $this->mission = htmlspecialchars( strip_tags($this->mission));
                 $this->palletsize = htmlspecialchars( strip_tags($this->palletsize));
 
-                $this->status = (int)($this->status);
-                $this->mode = (int)($this->mode);
-                $this->linkstatus = (int)($this->linkstatus);
 
                $stmt2->bindParam(':equipid',$this->equipid);
                $stmt2->bindParam(':brand',$this->brand);
@@ -89,16 +86,16 @@
                $stmt2->bindParam(':palletsize',$this->palletsize);
 
 
-            print_r(json_encode(
-                array(
-                    'q'=> $query2,
-                )));
+            // print_r(json_encode(
+            //     array(
+            //         'q'=> $query2,
+            //     )));
 
 
-                // if( $stmt2->execute())
-                // {
-                //     return true;
-                // }
+                if( $stmt2->execute())
+                {
+                    return true;
+                }
 
                   return false;
               }
