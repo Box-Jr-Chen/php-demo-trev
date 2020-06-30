@@ -32,10 +32,10 @@
         }
         public function create_update(){
 
-            $query = 'CREATE OR REPLACE FUNCTION merge_db(key varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c varchar,mode_c varchar,linkstatus_c varchar,palletno_c varchar,mission_c varchar,palletsize_c varchar) RETURNS VOID AS
+            $query = 'CREATE OR REPLACE FUNCTION merge_db(key_equipid varchar,brand_c varchar,devip_c varchar,subid_c varchar,opid_c varchar,status_c varchar,mode_c varchar,linkstatus_c varchar,palletno_c varchar,mission_c varchar,palletsize_c varchar) RETURNS VOID AS
             $$
             BEGIN
-                    UPDATE '.$this->table.' SET brand =brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,mission=mission_c,palletsize=palletsize_c  WHERE equipid = key;
+                    UPDATE '.$this->table.' SET brand =brand_c,devip=devip_c,subid=subid_c,opid=opid_c,status=status_c,mode=mode_c,linkstatus=linkstatus_c,palletno=palletno_c,mission=mission_c,palletsize=palletsize_c  WHERE equipid = key_equipid;
                     IF found THEN
                         RETURN;
                     END IF;
